@@ -1,5 +1,5 @@
 Please look at the working example:
-currency.greatbit.ru
+http://currency.greatbit.ru
 
 Application contains of 2 projects - java backend and JS backbone frontend. Separation makes it possible to build projects in different environments, place simple static UI on smaller virtual machines (tiny docker containers), keep different number of UI and API nodes.
 
