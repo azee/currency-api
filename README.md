@@ -1,9 +1,13 @@
-Please look at the working example:
+Example
+===========
 http://currency.greatbit.ru
 
+Overview
+===========
 Application contains of 2 projects - java backend and JS backbone frontend. Separation makes it possible to build projects in different environments, place simple static UI on smaller virtual machines (tiny docker containers), keep different number of UI and API nodes.
 
-Backend.
+Backend
+===========
 Java APP provides REST-API and ready to be distributive (multiple nodes). Inmemory embedded Hazelcast is used to keep and sync data. 
 
 External data is cached in Hazelcast and updated each 30 minutes. Data providers are pluggable thanks to Spring IOC. If more than 1 data provider will be used - PostBeanInitProcessor can be implemented to store several data plugins in Spring singleton (e.g.: https://github.com/azee/cropper/blob/master/cropper-service/src/main/java/ru/greatbit/cropper/plugins/PluginsPostProcessor.java).
@@ -22,15 +26,18 @@ It is also can be deployed into any WAR container under /currency-api root.
 
 There is no need to create databases. In real life it would be better to add 2-3 extra hazelcast standalone nodes and add them as members in config to avoid data loss if all nodes and external source will go down simultaniously.
 
-Frontend.
+Frontend
+===========
 Frontend is based on Backbone. It is just a static data - your server must serve static data from the base folder (see Nginx config example below).
 
 Data from server is updated every minute - no need to do it manually. 
 
-Deployment.
+Deployment
+===========
 Both packages could be packed into debian packages, deployed using salt (or any other), shipped within docker containers.
 
-NGINX.
+NGINX
+===========
 Example of nginx-config:
 
 server {
