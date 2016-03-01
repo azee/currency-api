@@ -11,6 +11,7 @@ import retrofit.client.OkClient;
 import retrofit.converter.JacksonConverter;
 import ru.greatbit.currency.beans.Currency;
 import ru.greatbit.currency.provider.DataProvider;
+import ru.greatbit.currency.provider.Plugin;
 import ru.greatbit.currency.provider.error.CurrencySourceException;
 
 import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
@@ -19,6 +20,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 /**
  * Created by azee on 29.01.16.
  */
+@Plugin(name = "OpenExchange", contract = DataProvider.class)
 public class OpenExchangeRatesProvider implements DataProvider {
 
     private final long TIMEOUT_SEC = 15;

@@ -71,6 +71,12 @@
             <artifactId>slf4j-log4j12</artifactId>
         </dependency>
 
+        <!-- Utils -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
         <!--Junit-->
         <dependency>
             <groupId>junit</groupId>
