@@ -3,7 +3,9 @@ package ru.greatbit.currency.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.greatbit.currency.beans.Currency;
+import ru.greatbit.currency.provider.DataProvider;
 import ru.greatbit.currency.service.RatesService;
+import ru.greatbit.currency.service.plugin.PluginsContainer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -16,6 +18,9 @@ import javax.ws.rs.core.MediaType;
 public class CurrencyRest {
 
     @Autowired
+    private PluginsContainer pluginsContainer;
+
+    @Autowired
     RatesService ratesService;
 
     @GET
@@ -24,4 +29,13 @@ public class CurrencyRest {
     public Currency getAll() throws Exception {
         return ratesService.getData();
     }
+
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("/{pluginName}/all")
+    public Currency getAll(@PathParam("pluginName") String pluginName) throws Exception {
+        DataProvider provider = (DataProvider) pluginsContainer.getPlugin(DataProvider.class.getSimpleName(), pluginName);
+        return provider.provide();
+    }
+
 }

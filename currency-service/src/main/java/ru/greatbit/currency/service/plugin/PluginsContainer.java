@@ -12,9 +12,9 @@ import java.util.Map;
  */
 @Component
 public class PluginsContainer<T> {
-    private Map<Class, Map<String, T>> plugins;
+    private Map<String, Map<String, T>> plugins;
 
-    public Map<Class, Map<String, T>> getPlugins() {
+    public Map<String, Map<String, T>> getPlugins() {
         if (plugins == null){
             plugins = new HashMap<>();
         }
@@ -22,27 +22,16 @@ public class PluginsContainer<T> {
     }
 
     public List<String> getPluginsList(String clazz) {
-        Map<String, T> pluginsForClass;
-        try {
-            pluginsForClass = getPlugins().get(Class.forName(clazz));
-        } catch (ClassNotFoundException e) {
-            return new ArrayList<>();
-        }
+        Map<String, T> pluginsForClass = getPlugins().get(clazz);
         return pluginsForClass == null ? new ArrayList<>() : new ArrayList<>(pluginsForClass.keySet());
     }
 
-    public List<Class> getPluginsTypes() {
+    public List<String> getPluginsTypes() {
         return new ArrayList<>(getPlugins().keySet());
     }
 
     public T getPlugin(String clazz, String name){
-        Map<String, T> pluginsForClass;
-        try {
-            pluginsForClass = getPlugins().get(Class.forName(clazz));
-        } catch (ClassNotFoundException e) {
-            throw new PluginNotFoundException(String.format("Couldn't find a plugin with class [%s]", clazz));
-        }
-
+        Map<String, T> pluginsForClass = getPlugins().get(clazz);
         if (pluginsForClass == null){
             throw new PluginNotFoundException(String.format("Couldn't find a plugin with class [%s]", clazz));
         }

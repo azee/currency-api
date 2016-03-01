@@ -1,4 +1,4 @@
-package ru.greatbit.currency.openexchangerates;
+package ru.greatbit.currency.fakeprovider;
 
 import ru.greatbit.currency.beans.Currency;
 

@@ -27,6 +27,11 @@
             <artifactId>openexchangerates-data-provider</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>ru.greatbit.currency</groupId>
+            <artifactId>fake-data-provider</artifactId>
+        </dependency>
+
         <!-- Spring framework -->
         <dependency>
             <groupId>org.springframework</groupId>
