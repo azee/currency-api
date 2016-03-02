@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import ru.greatbit.currency.beans.Currency;
 import ru.greatbit.currency.provider.DataProvider;
 import ru.greatbit.currency.service.RatesService;
-import ru.greatbit.currency.service.plugin.PluginsContainer;
+import ru.greatbit.plow.PluginsContainer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

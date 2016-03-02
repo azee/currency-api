@@ -2,7 +2,7 @@ package ru.greatbit.currency.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import ru.greatbit.currency.service.plugin.PluginsContainer;
+import ru.greatbit.plow.PluginsContainer;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
