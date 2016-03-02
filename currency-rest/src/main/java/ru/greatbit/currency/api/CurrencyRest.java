@@ -34,7 +34,7 @@ public class CurrencyRest {
     @Produces({MediaType.APPLICATION_JSON})
     @Path("/{pluginName}/all")
     public Currency getAll(@PathParam("pluginName") String pluginName) throws Exception {
-        DataProvider provider = (DataProvider) pluginsContainer.getPlugin(DataProvider.class.getSimpleName(), pluginName);
+        DataProvider provider = pluginsContainer.getPlugin(DataProvider.class, pluginName);
         return provider.provide();
     }
 
