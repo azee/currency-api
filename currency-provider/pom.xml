@@ -16,6 +16,10 @@
             <groupId>ru.greatbit.currency</groupId>
             <artifactId>currency-beans</artifactId>
         </dependency>
+        <dependency>
+            <groupId>ru.greatbit.plow</groupId>
+            <artifactId>plow-contract</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

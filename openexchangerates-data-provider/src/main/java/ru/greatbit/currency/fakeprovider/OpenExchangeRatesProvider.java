@@ -11,8 +11,8 @@ import retrofit.client.OkClient;
 import retrofit.converter.JacksonConverter;
 import ru.greatbit.currency.beans.Currency;
 import ru.greatbit.currency.provider.DataProvider;
-import ru.greatbit.currency.provider.Plugin;
 import ru.greatbit.currency.provider.error.CurrencySourceException;
+import ru.greatbit.plow.contract.Plugin;
 
 import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
 import static java.util.concurrent.TimeUnit.SECONDS;

@@ -32,6 +32,12 @@
             <artifactId>fake-data-provider</artifactId>
         </dependency>
 
+        <!-- Plow -->
+        <dependency>
+            <groupId>ru.greatbit.plow</groupId>
+            <artifactId>plow-core</artifactId>
+        </dependency>
+
         <!-- Spring framework -->
         <dependency>
             <groupId>org.springframework</groupId>

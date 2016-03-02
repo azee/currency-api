@@ -39,6 +39,12 @@
             <artifactId>okhttp</artifactId>
             <version>${okhttp.version}</version>
         </dependency>
+
+        <!-- Plow -->
+        <dependency>
+            <groupId>ru.greatbit.plow</groupId>
+            <artifactId>plow-contract</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

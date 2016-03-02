@@ -33,6 +33,7 @@
         <jetty.stopPort>9967</jetty.stopPort>
         <jetty.version>9.3.7.v20160115</jetty.version>
         <sl4j.version>1.7.7</sl4j.version>
+        <plow.version>1.0-SNAPSHOT</plow.version>
     </properties>
 
 
@@ -84,6 +85,18 @@
                 <groupId>org.jvnet.jaxb2_commons</groupId>
                 <artifactId>jaxb2-basics-runtime</artifactId>
                 <version>0.7.0</version>
+            </dependency>
+
+            <!-- Plow -->
+            <dependency>
+                <groupId>ru.greatbit.plow</groupId>
+                <artifactId>plow-core</artifactId>
+                <version>${plow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ru.greatbit.plow</groupId>
+                <artifactId>plow-contract</artifactId>
+                <version>${plow.version}</version>
             </dependency>
 
 

@@ -20,9 +20,12 @@
             <groupId>ru.greatbit.currency</groupId>
             <artifactId>currency-provider</artifactId>
         </dependency>
+
+        <!-- Plow -->
+        <dependency>
+            <groupId>ru.greatbit.plow</groupId>
+            <artifactId>plow-contract</artifactId>
+        </dependency>
     </dependencies>
 
-    <build>
-
-    </build>
 </project>

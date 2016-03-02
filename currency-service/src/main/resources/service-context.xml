@@ -49,10 +49,10 @@
 
     <bean name="dataProvider" class="${data.provider}"/>
 
-    <bean class="ru.greatbit.currency.service.plugin.PluginsPostProcessor"/>
-    <context:component-scan base-package="ru.greatbit.currency">
+    <bean class="ru.greatbit.plow.PluginsPostProcessor"/>
+    <context:component-scan base-package="ru.greatbit">
         <context:include-filter type="annotation"
-                                expression="ru.greatbit.currency.provider.Plugin"/>
+                                expression="ru.greatbit.plow.contract.Plugin"/>
     </context:component-scan>
 
     <!-- Scheduler -->

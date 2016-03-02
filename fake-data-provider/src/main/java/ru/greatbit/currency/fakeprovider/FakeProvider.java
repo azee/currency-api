@@ -2,7 +2,7 @@ package ru.greatbit.currency.fakeprovider;
 
 import ru.greatbit.currency.beans.Currency;
 import ru.greatbit.currency.provider.DataProvider;
-import ru.greatbit.currency.provider.Plugin;
+import ru.greatbit.plow.contract.Plugin;
 
 /**
  * Created by azee on 29.01.16.
