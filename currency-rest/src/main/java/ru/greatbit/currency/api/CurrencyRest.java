@@ -25,13 +25,6 @@ public class CurrencyRest {
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    @Path("/all")
-    public Currency getAll() throws Exception {
-        return ratesService.getData();
-    }
-
-    @GET
-    @Produces({MediaType.APPLICATION_JSON})
     @Path("/{pluginName}/all")
     public Currency getAll(@PathParam("pluginName") String pluginName) throws Exception {
         DataProvider provider = pluginsContainer.getPlugin(DataProvider.class, pluginName);

@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import ru.greatbit.currency.beans.Currency;
 import ru.greatbit.currency.provider.DataProvider;
+import ru.greatbit.plow.PluginsContainer;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertNotNull;
@@ -21,11 +22,11 @@ import static org.junit.Assert.assertThat;
 public class RateServiceTest {
 
     @Autowired
-    DataProvider dataProvider;
+    PluginsContainer container;
 
     @Test
     public void dataProviderTest(){
-        Currency currency = dataProvider.provide();
+        Currency currency = container.getPlugin(DataProvider.class, "FakeProvider").provide();
         assertNotNull(currency);
         assertNotNull(currency.getRates());
         assertThat(currency.getRates().size(), is(2));

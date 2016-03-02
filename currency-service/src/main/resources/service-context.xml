@@ -47,8 +47,6 @@
         </hz:config>
     </hz:hazelcast>
 
-    <bean name="dataProvider" class="${data.provider}"/>
-
     <bean class="ru.greatbit.plow.PluginsPostProcessor"/>
     <context:component-scan base-package="ru.greatbit">
         <context:include-filter type="annotation"
